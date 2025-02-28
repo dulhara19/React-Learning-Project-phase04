@@ -106,3 +106,65 @@ This happens when a component is removed from the UI.
 
 - Class components use lifecycle methods like `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount`.
 - Functional components use the `useEffect` hook to handle lifecycle behaviors.
+
+## 📌 Key Functions of useContext
+
+1️⃣ Access Global State
+
+    useContext allows components to read values from a Context.Provider without needing props.
+
+2️⃣ Avoid Prop Drilling
+
+    Instead of passing props through multiple levels, components can directly access shared values.
+
+3️⃣ Simplify State Management
+
+    Works like a lightweight global state for sharing data between components.
+
+4️⃣ Dynamic Context Updates
+
+    When the Provider's value changes, all components using useContext automatically re-render.
+
+5️⃣ Works with Custom Hooks
+
+    useContext can be combined with custom hooks to better organize and manage context data.
+
+    ```jsx
+    import React, { createContext, useContext } from "react";
+
+// 1️⃣ Create a Context
+const ThemeContext = createContext();
+
+// 2️⃣ Create a component that consumes the context
+const DisplayTheme = () => {
+const theme = useContext(ThemeContext); // Access value from context
+return <p>Current Theme: {theme}</p>;
+};
+
+// 3️⃣ Provide the context value to the component tree
+const App = () => {
+return (
+<ThemeContext.Provider value="🌙 Dark Mode">
+<DisplayTheme />
+</ThemeContext.Provider>
+);
+};
+
+export default App;
+
+```
+
+### 🎯 When to Use useContext?
+
+✅ Theming (Light/Dark mode)
+✅ User Authentication (Logged-in user details)
+✅ Language Preferences (Multilingual apps)
+✅ Global Configurations (API endpoints, app settings)
+
+### 🚀 Why Use useContext Instead of Props?
+
+🔹 Without useContext, you'd have to pass values manually through props at every level.
+🔹 With useContext, components can access global state directly, making the code cleaner and easier to maintain.
+
+
+```
