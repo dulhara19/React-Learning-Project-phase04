@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 const UseEffectFunction = () => {
   //-----USEEFFECT HOOK------
+
   const [newcount, setNewCount] = useState(0);
 
   const newcounter = () => {
@@ -9,11 +10,17 @@ const UseEffectFunction = () => {
   };
 
   useEffect(() => {
-    setTimeout(() => {
-      <p> new counte : {newcount}</p>;
-      console.log("use effect value after triggered : ", newcount);
-    });
-  }, []);
+    // setTimeout(() => {
+    //   console.log("setTimeout exectues after time defined : ");
+    // },1000);
+
+    const firstFunction = () => {
+      console.log("✅ Effect function runs (Component Mounted)");
+    };
+    firstFunction();
+
+    return () => console.log("❌ Cleanup function runs (Component Unmounted)");
+  }, [newcount]);
 
   return (
     <div>
@@ -24,3 +31,14 @@ const UseEffectFunction = () => {
   );
 };
 export default UseEffectFunction;
+
+// First Render:
+
+//     firstFunction() runs → ✅ Effect function logs
+//     No cleanup function exists yet.
+
+// When newcount updates:
+
+//     The previous effect is cleaned up before running the new one.
+//     ❌ Cleanup function runs first (from the last effect instance).
+//     Then ✅ Effect function runs again.
