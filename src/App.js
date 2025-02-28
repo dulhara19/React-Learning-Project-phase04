@@ -1,5 +1,7 @@
 import UseStateFunction from "./components/UseState";
 import UseEffectFunction from "./components/UseEffect";
+import UseContext from "./components/UseContex";
+import NewFunction from "./components/UseContextnew";
 
 function App() {
   return (
@@ -9,6 +11,9 @@ function App() {
       <hr />
       {/* -----USEEFFECT HOOK------ */}
       <UseEffectFunction />
+      {/* -----USECONTEXT HOOK------ */}
+      <UseContext />
+      <NewFunction />
     </div>
   );
 }
