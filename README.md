@@ -102,7 +102,7 @@ This happens when a component is removed from the UI.
 
 ---
 
-### 🎯 Summary
+### Summary
 
 - Class components use lifecycle methods like `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount`.
 - Functional components use the `useEffect` hook to handle lifecycle behaviors.
