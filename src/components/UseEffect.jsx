@@ -10,9 +10,10 @@ const UseEffectFunction = () => {
 
   useEffect(() => {
     setTimeout(() => {
+      <p> new counte : {newcount}</p>;
       console.log("use effect value after triggered : ", newcount);
     });
-  }, [newcount]);
+  }, []);
 
   return (
     <div>
