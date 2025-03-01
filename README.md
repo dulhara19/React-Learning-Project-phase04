@@ -167,4 +167,23 @@ export default App;
 🔹 With useContext, components can access global state directly, making the code cleaner and easier to maintain.
 
 
+# useRef in React
+
+`useRef` is a React Hook that allows you to persist values across renders **without causing re-renders**. It is commonly used to reference DOM elements or store mutable values.
+
+## 🔹 When to Use `useRef`?
+✅ **Accessing and Manipulating DOM Elements** (e.g., focusing an input field)
+✅ **Storing Previous Values Without Re-rendering**
+✅ **Maintaining State Without Triggering Re-renders**
+✅ **Handling Timeouts and Intervals**
+
+## 🔹 Key Points
+- `useRef` **does not trigger re-renders** when updated.
+- `.current` holds the reference to the value.
+- It can store **DOM elements, timers, and mutable values**.
+
+## 🛑 Common Mistakes
+❌ Trying to use `.focus()` on non-focusable elements (like `<div>`)
+❌ Expecting `useRef` to trigger re-renders (use `useState` for that)
+❌ Forgetting to initialize `useRef(null)` when working with DOM elements
 ```
