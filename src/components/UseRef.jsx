@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 
 function Mycomponent() {
-  //   let [number, setNumber] = useState(0);
+  //----CREATING USE STATE----
+  //let [number, setNumber] = useState(0);
 
   const ref = useRef(0);
   console.log(ref); // when react is on strict mode,this will automatically print twice in console
@@ -11,12 +12,16 @@ function Mycomponent() {
   });
 
   function handleClick() {
+    //----USIN USESTATE UPDATE THE STATE----
     // setNumber((n) => n + 1);
     // console.log(number);
 
-    ref.current = ref.current + 1;
-    console.log(ref.current);
-    //ref.current.focus();
+    //----REF OBJ INCREASE VALUE BY ONE-----
+    // ref.current = ref.current + 1;
+    // console.log(ref.current);
+
+    ref.current.focus();
+    ref.current.style.background = "red";
   }
   return (
     <div>
