@@ -4,7 +4,7 @@ function Mycomponent() {
   //   let [number, setNumber] = useState(0);
 
   const ref = useRef("0");
-  console.log(ref);
+  console.log(ref); // when react is on strict mode,this will automatically print twice in console
 
   useEffect(() => {
     console.log("component rendered");
