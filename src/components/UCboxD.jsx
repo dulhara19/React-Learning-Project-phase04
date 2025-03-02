@@ -4,7 +4,7 @@ import { namecontext } from "./UCboxA";
 const BoxD = () => {
   const { name, theme, toggle } = useContext(namecontext);
   return (
-    <div className="box">
+    <div className={`box ${theme}`}>
       <h1>box D</h1>
       <p> name : {name}</p>
       <p> theme : {theme}</p>
