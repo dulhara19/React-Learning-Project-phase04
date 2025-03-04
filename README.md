@@ -152,7 +152,7 @@ return (
 
 export default App;
 
-```
+````
 
 ### 🎯 When to Use useContext?
 
@@ -186,4 +186,70 @@ export default App;
 ❌ Trying to use `.focus()` on non-focusable elements (like `<div>`)
 ❌ Expecting `useRef` to trigger re-renders (use `useState` for that)
 ❌ Forgetting to initialize `useRef(null)` when working with DOM elements
+
+# useReducer Hook in React
+
+## Overview
+The `useReducer` hook in React is used for managing complex state logic in a component. It is an alternative to `useState`, particularly when the next state depends on the previous state.
+
+## Why use useReducer?
+- Helps manage complex state transitions.
+- Keeps logic separate from UI components.
+- Provides better scalability compared to `useState`.
+
+## How it Works
+`useReducer` takes two arguments:
+1. **A reducer function** – Defines how the state should update based on an action.
+2. **An initial state** – The starting value of the state.
+
+It returns an array with two elements:
+- **state** – The current state.
+- **dispatch** – A function to send actions to the reducer.
+
+## Example Implementation
+```jsx
+import { useReducer } from "react";
+
+// Reducer function
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "INCREMENT":
+      return { count: state.count + 1 };
+    case "DECREMENT":
+      return { count: state.count - 1 };
+    default:
+      return state;
+  }
+};
+
+const Counter = () => {
+  const [state, dispatch] = useReducer(reducer, { count: 0 });
+
+  return (
+    <div>
+      <button onClick={() => dispatch({ type: "INCREMENT" })}>plus</button>
+      <p>{state.count}</p>
+      <button onClick={() => dispatch({ type: "DECREMENT" })}>minus</button>
+    </div>
+  );
+};
+
+export default Counter;
+
+````
+
+Breakdown of the Code
+
+    Reducer function: Defines how state changes based on the action.type.
+    useReducer Hook: Initializes the state and provides a dispatch function.
+    dispatch function: Used to send actions (INCREMENT or DECREMENT) to update state.
+
+When to Use useReducer?
+
+    When state logic is complex or involves multiple sub-values.
+    When the next state depends on the previous state.
+    When managing state transitions in a predictable way.
+
+```
+
 ```
