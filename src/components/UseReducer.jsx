@@ -24,7 +24,7 @@ const Counter = () => {
     // </div>
 
     <div>
-      <button onClick={dispatch()}>plus</button>
+      <button onClick={() => dispatch()}>plus</button>
       <p>{state.count}</p>
     </div>
   );
