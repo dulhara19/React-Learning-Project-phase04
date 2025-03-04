@@ -131,25 +131,23 @@ This happens when a component is removed from the UI.
 
 ```jsx
 import React, { createContext, useContext } from "react";
-```
 
-```
 // 1️⃣ Create a Context
 const ThemeContext = createContext();
 
 // 2️⃣ Create a component that consumes the context
 const DisplayTheme = () => {
-const theme = useContext(ThemeContext); // Access value from context
-return <p>Current Theme: {theme}</p>;
+  const theme = useContext(ThemeContext); // Access value from context
+  return <p>Current Theme: {theme}</p>;
 };
 
 // 3️⃣ Provide the context value to the component tree
 const App = () => {
-return (
-<ThemeContext.Provider value="🌙 Dark Mode">
-<DisplayTheme />
-</ThemeContext.Provider>
-);
+  return (
+    <ThemeContext.Provider value="🌙 Dark Mode">
+      <DisplayTheme />
+    </ThemeContext.Provider>
+  );
 };
 
 export default App;
