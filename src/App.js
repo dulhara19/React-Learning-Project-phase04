@@ -5,6 +5,7 @@ import UseContext from "./components/UseContex";
 import NewFunction from "./components/UseContextnew";
 import Mycomponent from "./components/UseRef";
 import BoxA from "./components/UCboxA";
+import Counter from "./components/UseReducer";
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
       <NewFunction />
       <Mycomponent />
       <BoxA />
+      {/* -----USEREDUCER HOOK------ */}
+      <Counter />
     </div>
   );
 }
