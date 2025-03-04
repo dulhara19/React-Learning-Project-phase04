@@ -2,8 +2,15 @@ import { useReducer, useState } from "react";
 
 const Counter = () => {
   function reducer(state, action) {
-    console.log(state);
-  } //in useReducer, we devide our logic and UI part.
+    // console.log(state);
+    //in useReducer, we devide our logic and UI part.
+    switch (action.type) {
+      case "increment":
+        return { count: state.count + 1 };
+      default:
+        return state;
+    }
+  }
 
   //const [count, setCount] = useState(0);
   const [state, dispatch] = useReducer(reducer, { count: 0 }); // reducer is a function that updates the current.
@@ -24,7 +31,7 @@ const Counter = () => {
     // </div>
 
     <div>
-      <button onClick={() => dispatch()}>plus</button>
+      <button onClick={() => dispatch({ type: "increment" })}>plus</button>
       <p>{state.count}</p>
     </div>
   );
