@@ -129,9 +129,11 @@ This happens when a component is removed from the UI.
 
     useContext can be combined with custom hooks to better organize and manage context data.
 
-    ```jsx
-    import React, { createContext, useContext } from "react";
+```jsx
+import React, { createContext, useContext } from "react";
+```
 
+```
 // 1️⃣ Create a Context
 const ThemeContext = createContext();
 
@@ -151,8 +153,7 @@ return (
 };
 
 export default App;
-
-````
+```
 
 ### 🎯 When to Use useContext?
 
@@ -166,23 +167,25 @@ export default App;
 🔹 Without useContext, you'd have to pass values manually through props at every level.
 🔹 With useContext, components can access global state directly, making the code cleaner and easier to maintain.
 
-
 # useRef in React
 
 `useRef` is a React Hook that allows you to persist values across renders **without causing re-renders**. It is commonly used to reference DOM elements or store mutable values.
 
 ## 🔹 When to Use `useRef`?
+
 ✅ **Accessing and Manipulating DOM Elements** (e.g., focusing an input field)
 ✅ **Storing Previous Values Without Re-rendering**
 ✅ **Maintaining State Without Triggering Re-renders**
 ✅ **Handling Timeouts and Intervals**
 
 ## 🔹 Key Points
+
 - `useRef` **does not trigger re-renders** when updated.
 - `.current` holds the reference to the value.
 - It can store **DOM elements, timers, and mutable values**.
 
 ## 🛑 Common Mistakes
+
 ❌ Trying to use `.focus()` on non-focusable elements (like `<div>`)
 ❌ Expecting `useRef` to trigger re-renders (use `useState` for that)
 ❌ Forgetting to initialize `useRef(null)` when working with DOM elements
@@ -190,23 +193,29 @@ export default App;
 # useReducer Hook in React
 
 ## Overview
+
 The `useReducer` hook in React is used for managing complex state logic in a component. It is an alternative to `useState`, particularly when the next state depends on the previous state.
 
 ## Why use useReducer?
+
 - Helps manage complex state transitions.
 - Keeps logic separate from UI components.
 - Provides better scalability compared to `useState`.
 
 ## How it Works
+
 `useReducer` takes two arguments:
+
 1. **A reducer function** – Defines how the state should update based on an action.
 2. **An initial state** – The starting value of the state.
 
 It returns an array with two elements:
+
 - **state** – The current state.
 - **dispatch** – A function to send actions to the reducer.
 
 ## Example Implementation
+
 ```jsx
 import { useReducer } from "react";
 
@@ -235,8 +244,7 @@ const Counter = () => {
 };
 
 export default Counter;
-
-````
+```
 
 Breakdown of the Code
 
@@ -249,7 +257,3 @@ When to Use useReducer?
     When state logic is complex or involves multiple sub-values.
     When the next state depends on the previous state.
     When managing state transitions in a predictable way.
-
-```
-
-```
