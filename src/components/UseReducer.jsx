@@ -9,6 +9,8 @@ const Counter = () => {
         return { count: state.count + 1 };
       case "decrement":
         return { count: state.count - 1 };
+      case "reset":
+        return { count: 0 };
       default:
         return state;
     }
@@ -36,6 +38,7 @@ const Counter = () => {
       <button onClick={() => dispatch({ type: "increment" })}>plus</button>
       <p>{state.count}</p>
       <button onClick={() => dispatch({ type: "decrement" })}>minus</button>
+      <button onClick={() => dispatch({ type: "reset" })}> reset </button>
     </div>
   );
 };
