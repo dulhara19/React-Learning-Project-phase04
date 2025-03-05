@@ -12,7 +12,7 @@ const Counter = () => {
       case "reset":
         return { count: 0 };
       default:
-        return state;
+        return state; // we can use multiple switch case to manage state
     }
   }
 
